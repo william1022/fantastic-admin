@@ -117,7 +117,7 @@
   </tr>
   <tr>
     <th colspan="4" align="center">
-      一款自成一派的移动端 H5 框架 hello
+      一款自成一派的移动端 H5 框架 hello world
     </th>
   </tr>
   <tr>
