@@ -6,14 +6,28 @@ export default defineFakeRoute([
     url: '/mock/user/login',
     method: 'post',
     response: ({ body }) => {
-      return {
-        error: '',
-        status: 1,
-        data: {
-          account: body.account,
-          token: `${body.account}:${faker.internet.jwt()}`,
-          avatar: 'https://fantastic-admin.hurui.me/logo.svg',
-        },
+      const account_str = body.account
+      if (account_str !== 'admin') {
+        return {
+          error: 'error account',
+          status: 2,
+          data: {
+            // account: body.account,
+            // token: `${body.account}:${faker.internet.jwt()}`,
+            // avatar: 'https://fantastic-admin.hurui.me/logo.svg',
+          },
+        }
+      }
+      else {
+        return {
+          error: '',
+          status: 1,
+          data: {
+            account: body.account,
+            token: `${body.account}:${faker.internet.jwt()}`,
+            avatar: 'https://fantastic-admin.hurui.me/logo.svg',
+          },
+        }
       }
     },
   },
